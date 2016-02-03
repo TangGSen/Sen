@@ -27,7 +27,9 @@ public class HomeActivity extends BaseActivity {
     //tab item name
     String tabTiles[];
     //tab item drawable
-    int tabItemDrawable[];
+    int tabItemDrawableNormal[];
+    int tabItemDrawableSelected[];
+    private int tabCount;
 
 
     public void initView() {
@@ -41,11 +43,15 @@ public class HomeActivity extends BaseActivity {
     private void initTabView() {
 
         tabTiles = ResourcesUtils.getStringArray(this, R.array.tabItemName);
-        tabItemDrawable = new int[]{R.drawable.ic_tab_home, R.drawable.ic_tab_classification, R.drawable.ic_tab_car, R.drawable.ic_tab_personal};
-        HomeActFragAdpter fragAdapter = new HomeActFragAdpter(getSupportFragmentManager(), this, tabTiles, tabItemDrawable);
+        tabItemDrawableNormal = new int[]{R.drawable.ic_tab_home_normal, R.drawable.ic_tab_classification_normal, R.drawable.ic_tab_car_normal, R.drawable.ic_tab_personal_normal};
+        tabItemDrawableSelected = new int[]{R.drawable.ic_tab_home_selected, R.drawable.ic_tab_classification_selected, R.drawable.ic_tab_car_selected, R.drawable.ic_tab_personal_selected};
+
+
+        final HomeActFragAdpter fragAdapter = new HomeActFragAdpter(getSupportFragmentManager(), this, tabTiles, tabItemDrawableNormal);
         viewPager_content.setAdapter(fragAdapter);
         layout_buttom_tab.setupWithViewPager(viewPager_content);
-        for (int i = 0; i < layout_buttom_tab.getTabCount(); i++) {
+        tabCount = layout_buttom_tab.getTabCount();
+        for (int i = 0; i < tabCount; i++) {
             TabLayout.Tab tab = layout_buttom_tab.getTabAt(i);
             if (tab != null) {
                 tab.setCustomView(fragAdapter.getTabView(i));
@@ -59,9 +65,17 @@ public class HomeActivity extends BaseActivity {
 
             @Override
             public void onPageSelected(int position) {
-                TabLayout.Tab tab = layout_buttom_tab.getTabAt(position);
-                AppCompatTextView textView = (AppCompatTextView) tab.getCustomView();
-                textView.setSelected(true);
+                for (int i = 0; i < tabCount; i++) {
+                    TabLayout.Tab tab = layout_buttom_tab.getTabAt(i);
+                    AppCompatTextView textView = (AppCompatTextView) tab.getCustomView();
+                    if (i == position) {
+                       fragAdapter.changeSelecteTabColor(textView,tabItemDrawableSelected[i],true);
+                    } else {
+                        fragAdapter.changeSelecteTabColor(textView,tabItemDrawableNormal[i],false);
+                    }
+
+                }
+
             }
 
             @Override
@@ -70,6 +84,8 @@ public class HomeActivity extends BaseActivity {
             }
         });
         viewPager_content.setCurrentItem(0);
+        fragAdapter.changeSelecteTabColor((AppCompatTextView)layout_buttom_tab.getTabAt(0).getCustomView(),tabItemDrawableSelected[0],true);
+
     }
 
     @Override

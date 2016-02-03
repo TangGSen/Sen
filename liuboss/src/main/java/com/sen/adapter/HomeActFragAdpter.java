@@ -60,6 +60,12 @@ public class HomeActFragAdpter  extends FragmentPagerAdapter{
         topDrawable.setBounds(0, 0, topDrawable.getMinimumWidth(), topDrawable.getMinimumHeight());
         textView.setCompoundDrawables(null, topDrawable, null , null);
         textView.setText(mTabTiles[position]);
+    }
 
+    public void changeSelecteTabColor(AppCompatTextView textView,int drawableId,boolean isSelected){
+        Drawable topDrawable = ResourcesUtils.getResDrawable(mContext,drawableId);
+        topDrawable.setBounds(0, 0, topDrawable.getMinimumWidth(), topDrawable.getMinimumHeight());
+        textView.setCompoundDrawables(null, topDrawable, null , null);
+        textView.setSelected(isSelected);
     }
 }
