@@ -3,8 +3,6 @@ package com.sen.activity;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.AppCompatTextView;
-import android.support.v7.widget.Toolbar;
-import android.widget.TextView;
 
 import com.sen.adapter.HomeActFragAdpter;
 import com.sen.base.BaseActivity;
@@ -18,8 +16,7 @@ import butterknife.ButterKnife;
 public class HomeActivity extends BaseActivity {
 
 
-    private Toolbar mToolbar;
-    private TextView actionBarTile;
+
     @Bind(R.id.viewPager_content)
     ViewPager viewPager_content;
     @Bind(R.id.layout_buttom_tab)
@@ -90,11 +87,6 @@ public class HomeActivity extends BaseActivity {
 
     @Override
     protected void initActionBar() {
-        super.initActionBar();
-        mToolbar = (Toolbar) findViewById(R.id.app_bar);
-        mToolbar.setTitle("");
-        actionBarTile = (TextView) findViewById(R.id.action_bar_title);
-        setSupportActionBar(mToolbar);
 
     }
 }
