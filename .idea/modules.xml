@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Sen.iml" filepath="$PROJECT_DIR$/Sen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Sen.iml" filepath="$PROJECT_DIR$/Sen.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/liuboss/liuboss.iml" filepath="$PROJECT_DIR$/liuboss/liuboss.iml" />
       <module fileurl="file://$PROJECT_DIR$/liuboss/liuboss.iml" filepath="$PROJECT_DIR$/liuboss/liuboss.iml" />
     </modules>
   </component>

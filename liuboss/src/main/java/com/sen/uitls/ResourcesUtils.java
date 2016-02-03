@@ -28,4 +28,8 @@ public class ResourcesUtils {
     public static int getResColor(Context context,int id){
         return getResources(context).getColor(id);
     }
+
+    public static String[] getStringArray(Context context,int id) {
+        return getResources(context).getStringArray(id);
+    }
 }
