@@ -95,5 +95,7 @@ public class HomeActivity extends BaseActivity {
 //        actionBarTile.setText(R.string.loginString);
        // mToolbar.setNavigationIcon(R.drawable.arrow_left);
         setSupportActionBar(mToolbar);
+
+
     }
 }

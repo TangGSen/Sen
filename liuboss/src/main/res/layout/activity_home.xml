@@ -8,7 +8,7 @@
 
     <include
         android:id="@+id/app_bar"
-        layout="@layout/base_app_bar" />
+        layout="@layout/home_act_app_bar" />
 
 
     <android.support.v4.view.ViewPager
