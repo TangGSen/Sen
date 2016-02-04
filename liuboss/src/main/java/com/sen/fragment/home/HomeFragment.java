@@ -24,6 +24,9 @@ public class HomeFragment extends BaseFragment {
         rootView = inflater.inflate(R.layout.fragment_classification, container, false);
         ButterKnife.bind(this, rootView);
         textView.setText("home");
+
+
+
         return rootView;
     }
     @Override

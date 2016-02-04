@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v7.widget.AppCompatTextView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 
@@ -23,8 +24,9 @@ public class HomeActFragAdpter  extends FragmentPagerAdapter{
     //tab title
     private String mTabTiles[] ;
     private int mTabDrawableIds[];
+    private Toolbar mToolbar;
 
-    public HomeActFragAdpter(FragmentManager fm, Context context,String tabTiles[],int tabDrawableIds[]) {
+    public HomeActFragAdpter(FragmentManager fm, Context context, String tabTiles[], int tabDrawableIds[]) {
         super(fm);
         mContext = context;
         mTabTiles = tabTiles;

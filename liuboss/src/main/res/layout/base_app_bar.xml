@@ -3,13 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/home_tab_dimens"
+    android:layout_height="wrap_content"
     android:background="@color/actionBar"
     android:fitsSystemWindows="true"
     android:paddingTop="@dimen/padding_bar_top"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
     app:theme="@style/MyCustomerToolbar"
-   />
+   >
+    </android.support.v7.widget.Toolbar>
 
 
 
