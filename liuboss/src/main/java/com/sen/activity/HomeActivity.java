@@ -9,6 +9,7 @@ import com.sen.adapter.HomeActFragAdpter;
 import com.sen.base.BaseActivity;
 import com.sen.liuboss.R;
 import com.sen.uitls.ResourcesUtils;
+import com.sen.uitls.StatusBarCompat;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -32,6 +33,7 @@ public class HomeActivity extends BaseActivity {
 
     public void initView() {
         setContentView(R.layout.activity_home);
+        StatusBarCompat.compat(this,ResourcesUtils.getResColor(this,R.color.colorPrimaryDark));
         ButterKnife.bind(this);
 
         initTabView();
@@ -89,12 +91,7 @@ public class HomeActivity extends BaseActivity {
     @Override
     protected void initActionBar() {
         super.initActionBar();
-        mToolbar = (Toolbar) findViewById(R.id.app_bar);
-        mToolbar.setTitle("");
-//        actionBarTile = (TextView)findViewById(R.id.action_bar_title);
-//        actionBarTile.setText(R.string.loginString);
-       // mToolbar.setNavigationIcon(R.drawable.arrow_left);
-        setSupportActionBar(mToolbar);
+
 
 
     }
